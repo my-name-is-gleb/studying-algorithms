@@ -5,3 +5,4 @@
 1.4 - O(n)
 1.5 - O(n)
 1.6 - ?
+docs: add new answers for book questions
