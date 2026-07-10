@@ -1,3 +1,4 @@
+"""Chapter 01"""
 import bisect
 
 def binary_search(my_list, number):
@@ -32,3 +33,35 @@ print(listes)
 print(bisect.bisect_left(listes, 10))
 bisect.insort(my_list, 3.5)
 print(my_list)
+
+"""Chapter 02"""
+
+def findSmallest(arr):
+    smaller = arr[0]
+    smaller_index = 0
+    for i in range(1, len(arr)):
+        if arr[i] < smaller:
+            smaller = arr[i]
+            smaller_index = i
+
+    return smaller_index
+
+def selectionSort(arr):
+    newArr = []
+    for i in range(len(arr)):
+        smallest = findSmallest(arr)
+        newArr.append(arr.pop(smallest))
+    return newArr
+
+print(selectionSort([4, 6, 8, 1, 4, 3]))
+
+"""Chapter 03"""
+
+def recursionfunc(number):
+    print(number)
+    if number <= 1:
+        return "end"
+    else:
+        return recursionfunc(number-1)
+
+print(recursionfunc(int(input("> "))))
