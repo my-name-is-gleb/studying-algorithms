@@ -16,3 +16,59 @@
 """Chapter 03"""
 3.1 - выполняется функция greet 2, с аргументом "name: maggie", которую вызывают, в функции greet, с аргументом "name: maggie"
 3.2 - стек при бесконечной рекурсии, переполнится и зависнет
+"""Chapter 04"""
+4.1:
+      """loop"""
+      def sum_numbers(sumlist: list) -> int:
+          suma = 0
+          for number in sumlist:
+              suma += number
+          return suma
+
+      """recursion"""
+      index = 0
+      def sum_numbers(sumlist: list) -> int:
+          global index
+          if index == len(sumlist) - 1:
+              return sumlist[index]
+          suma = sumlist[index]
+          index += 1
+          return suma + sum_numbers(sumlist)
+
+      print(sum_numbers([11, 45, 32, 89]))
+
+4.2:
+      all_element = 0
+      def find_all_element(findlist: list):
+          global all_element
+          if not findlist:
+              return all_element
+          del findlist[0]
+          all_element += 1
+          return find_all_element(findlist)
+
+      print(find_all_element([11, 3, 56]))
+
+4.3:
+      """loop"""
+      def search_biggest_number(findlist: list) -> int:
+          biggest_number = 0
+          for number in findlist:
+              if number >= biggest_number:
+                  biggest_number = number
+          return biggest_number
+
+      print(search_biggest_number([11, 3, 56]))
+
+      """recursion"""
+      biggest_number = 0
+      def search_biggest_number(findlist: list) -> int:
+          global biggest_number
+          if not findlist:
+              return biggest_number
+          if findlist[0] >= biggest_number:
+              biggest_number = findlist[0]
+          del findlist[0]
+          return search_biggest_number(findlist)
+
+      print(search_biggest_number([11, 3, 56]))
