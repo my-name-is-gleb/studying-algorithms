@@ -145,3 +145,27 @@ def search_biggest_number(findlist: list) -> int:
     return search_biggest_number(findlist)
 
 print(search_biggest_number([11, 3, 56]))
+
+
+def Quicksort(sortlist: list) -> list:
+    if sortlist:
+        if len(sortlist) == 1:
+            return sortlist
+        mid_index = len(sortlist) // 2
+        pivot = sortlist[mid_index]
+        del sortlist[mid_index]
+        small_sorted_list = []
+        big_sorted_list = []
+        for number in sortlist:
+            if number >= pivot:
+                big_sorted_list.append(number)
+            elif number < pivot:
+                small_sorted_list.append(number)
+            else:
+                print("Слушай ну я хуй знаю что может быть и не больше и не меньше и не равно")
+        return Quicksort(small_sorted_list) + [pivot] + Quicksort(big_sorted_list)
+    else:
+        return []
+
+mylist = [3, 5, 11, 4, 89, 54, 1, 2, 1, 1, 45]
+print(Quicksort(mylist))
