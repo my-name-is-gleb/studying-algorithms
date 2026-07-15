@@ -85,3 +85,7 @@
 5.2 - не последовательным(inconsistent)
 5.3 - не последовательным(inconsistent)
 5.4 - последовательным(consistent)
+5.5 - подходит только четвертая хеш-функция(only the fourth hash function is suitable)
+5.6 - подойдет четвертая и вторая хеш-функция(the fourth and second hash functions will work.)
+5.7 - конкретно для примеров из книги подойдут все варианты хеш-функций кроме перовой
+      (Specifically for the examples from the book, all hash function variants are suitable except for the first one.)
