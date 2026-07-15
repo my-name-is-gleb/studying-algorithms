@@ -1,6 +1,7 @@
 """Note: All examples work if the user enters valid data."""
 """Chapter 01"""
 import bisect
+import requests
 
 def binary_search(my_list, number):
     low = 0
@@ -169,3 +170,42 @@ def Quicksort(sortlist: list) -> list:
 
 mylist = [3, 5, 11, 4, 89, 54, 1, 2, 1, 1, 45]
 print(Quicksort(mylist))
+
+"""Chapter 05"""
+
+from typing import Any
+book = dict()
+book = {} # сокращенная запись(abbreviated notation)
+book["apple"] = 0.54
+book["avocado"] = 1.49
+book["milk"] = 2.0
+print(book)
+print(book["apple"])
+print(book["avocado"])
+print(book["milk"])
+"""Поиск в словарях работает намного быстрее даже бинарного поиска! Он работает за время O(1)"""
+"""Dictionary lookup is much faster than even binary search! It operates in O(1) time."""
+
+def checking(dictionary: dict, element_under_test: Any) -> bool:
+    if element_under_test in dictionary:
+        return True
+    else:
+        return False
+    
+phone_book = {
+    "Misha": 7_912_456_78_90,
+    "Masha": 7_926_312_85_47,
+    "Kostya": 7_999_123_45_67
+}
+print(checking(phone_book, "Gleb"))
+print(checking(phone_book, 45))
+print(checking(phone_book, "Misha"))
+
+cache = {}
+def get_page(url: str):
+    if cache.get(url):
+        return cache[url] # Возвращаем кэшированные данные(Returning cached data)
+    else:
+        cache[url] = requests.get(url) # Данные сначала сохраняются в хэше(для простоты будем сохранять только статус)
+                                       # The data is first saved in the cache (for simplicity, we will save only the status)
+        return cache[url]
