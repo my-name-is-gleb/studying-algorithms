@@ -209,3 +209,34 @@ def get_page(url: str):
         cache[url] = requests.get(url) # Данные сначала сохраняются в хэше(для простоты будем сохранять только статус)
                                        # The data is first saved in the cache (for simplicity, we will save only the status)
         return cache[url]
+
+"""Chapter 06"""
+
+from collections import deque
+graph = {}
+graph["Gleb"] = ["Kostya"]
+graph["Kostya"] = ["Andrey"]
+graph["Vova"] = ["Kostya", "Andrey"]
+graph["Andrey"] = ["Mango-m"]
+
+def person_is_seller(name):
+    if name[-1] == 'm':
+        return True
+    else:
+        return False
+"""глупая проверка на то заканчивается ли слово на 'm'
+   (просто код из книги)"""
+search_queue = deque() # создание новой очереди
+search_queue += graph["Gleb"] # все соседи добовляются в очередь поиска
+searched = [] # этот список используется для отслеживания уже уже проверянныйх людей
+while search_queue: # пока очередь не пуста
+    person = search_queue.popleft() # из очереди извлекается первый человек
+    if not person in searched: # эта проверка нужна для избежания бесконечного цикла, где один узел добовляет второй, а второй узел - первый
+        if person_is_seller(person): # проверяем является ли человек продовцом манго
+            print(person, "is a mango seller") # да является
+            break
+        else:
+            search_queue += graph[person] # не является; все друзья этого человека добавятся в очередь
+            searched.append(person) # помечается как уже проверянный
+else:
+    print("Продавцов манго нет")
