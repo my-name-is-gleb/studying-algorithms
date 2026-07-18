@@ -89,3 +89,15 @@
 5.6 - подойдет четвертая и вторая хеш-функция(the fourth and second hash functions will work.)
 5.7 - конкретно для примеров из книги подойдут все варианты хеш-функций кроме перовой
       (Specifically for the examples from the book, all hash function variants are suitable except for the first one.)
+"""Chapter 06"""
+6.1 - 2
+6.2 - 2
+6.3 - А: недействителен(invalid)
+      Б: действителен(valid)
+      В: недействителен(invalid)
+6.4 - 1. Проснутся; 2. Чистить зубы; 3. Позавтракать; 4. Упаковать обед;
+      5. Сделать зарядку; 6. Принять душ; 7. Одется;
+
+      1. Wake up; 2. Brush teeth; 3. Have breakfast; 4. Pack lunch; 
+      5. Do exercises; 6. Take a shower; 7. Get dressed;
+6.5 - А
