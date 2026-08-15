@@ -101,3 +101,7 @@
       1. Wake up; 2. Brush teeth; 3. Have breakfast; 4. Pack lunch; 
       5. Do exercises; 6. Take a shower; 7. Get dressed;
 6.5 - А
+"""Chapter 07"""
+7.1 - A: 8
+      B: 60
+      C: 4
