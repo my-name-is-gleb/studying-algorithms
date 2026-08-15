@@ -240,3 +240,51 @@ while search_queue: # пока очередь не пуста
             searched.append(person) # помечается как уже проверянный
 else:
     print("Продавцов манго нет")
+
+"""Chapter 07"""
+
+def find_lowest_cost_node(costs): # найти узел с минимальной стоимостью
+    lower_cost = float("inf") # наименьшая стоимость (переменной присваивается бесконечность)
+    lower_cost_node = None # самый маленький узел
+    for node in costs:
+        cost = costs[node]
+        if cost < lower_cost and node not in processed: # если стоимость проверяемого узла меньше текущей минимальной (lower_cost) и узел ещё не был проверенным 
+            lower_cost = cost
+            lower_cost_node = node
+    return lower_cost_node
+
+graph = {}
+graph["start"] = {}
+graph["start"]["a"] = 6
+graph["start"]["b"] = 2
+print(graph["start"].keys())
+graph["a"] = {}
+graph["a"]["end"] = 1
+graph["b"] = {}
+graph["b"]["a"] = 3
+graph['b']["end"] = 5
+graph["end"] = {} # у конечного узла нет соседей
+"""Каждый узел имеет свой граф"""
+
+infinity = float("inf") # так в Python обозначается бесконечность
+costs = {}
+costs["a"] = 6
+costs["b"] = 2
+costs["end"] = infinity
+
+parents = {}
+parents["a"] = "start"
+parents["b"] = "start"
+parents["in"] = None
+processed = [] # массив для отслеживания уже обработанных узлов
+node = find_lowest_cost_node(costs) # Найти узел с наименьшей стоимостью среди необработанных
+while node is not None:
+    cost = costs[node] # стоимость узла в графе costs, например, для "b" это 2
+    neighbors = graph[node] # соседи узла в графе "graph", например, для "b" это {"a": 3, "end": 5}
+    for i in neighbors.keys(): # в i сейчас будет "a", далее "end"
+        new_cost = cost + neighbors[i] # добавляем стоимость ребра к текущей стоимости пути
+        if costs[i] > new_cost: # проверяем, является ли новый путь более коротким, чем старый
+            costs[i] = new_cost
+            parents[i] = node # обновляем родителя, чтобы после окончания работы цикла можно было восстановить самый короткий путь
+    processed.append(node) # добовляем узел в козину(уже после обработки всех его соседей)
+    node = find_lowest_cost_node(costs)
