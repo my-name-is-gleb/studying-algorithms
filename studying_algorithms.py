@@ -288,3 +288,41 @@ while node is not None:
             parents[i] = node # обновляем родителя, чтобы после окончания работы цикла можно было восстановить самый короткий путь
     processed.append(node) # добовляем узел в козину(уже после обработки всех его соседей)
     node = find_lowest_cost_node(costs)
+
+"""Chapter 08"""
+
+states = {"mt", "wa", "or", "id", "nv", "ut", "ca", "az"} # тип данных - множество
+stations = {}
+stations["kone"] = {"id", "nv", "ut"}
+stations["ktwo"] = {"wa", "id", "mt"}
+stations["kthree"] = {"or", "nv", "ca"}
+stations["kfour"] = {"nv", "ut"}
+stations["kfive"] = {"ca", "az"}
+"ключи - названия станций, а значения - сокращенные обозначение штатов, входящих в зону охвата"
+"""фигурные скобки можно использовать чтобы обозночать как словари так и множества,
+   а множества можно использовать как значение в словаре(что и илюстрируется выше)"""
+final_stations = set() # для обозначения множества используем функцию set() т.к. фигурные скобки по умолчанию обозночают словарь, а не множество и это может привести к ошибки
+while states: # пока остались не покрытые штаты
+    best_station = None # лучшая станция
+    states_covered = set() # самое большое покрытие штатов
+    for station, states_for_station in stations.items(): # Метод .items() в Python возвращает пару (ключ, значение) для каждого элемента словаря
+        covered = states & states_for_station # пересечение множеств
+        if len(covered) > len(states_covered): # если кол-во штатов которые покрывает текущая станция, больше лучшей за прошлое время
+            best_station = station
+            states_covered = covered
+    """в каждом цикле while выбирается лучшая станция и добовляется в список лучших станций, а также удаляются штаты которые она покрывала"""
+    states = states - states_covered
+    final_stations.add(best_station)
+print(final_stations)
+
+"""--------------------------------------------------"""
+"Множество - уникальный тип данных!"
+"С множеством можно проводить различные операции"
+"*В множестве не содержится дубликатов"
+velo_marks = {"Giant", "Trek", "Bmw", "Seatt"}
+auto_marks = {"Lada", "Bmw", "Tesla"}
+print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_marks}\n  Объедененые множества {velo_marks|auto_marks}") # | - объединение
+print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_marks}\n  Одинаковые элементы {velo_marks&auto_marks}") # & - пересечение элементов
+print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_marks}\n  Только велики {velo_marks-auto_marks}") # разность
+print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_marks}\n  Только машины {auto_marks-velo_marks}") # разность
+"""--------------------------------------------------"""
