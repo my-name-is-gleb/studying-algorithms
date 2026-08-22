@@ -105,3 +105,27 @@
 7.1 - A: 8
       B: 60
       C: 4
+"""Chapter 08"""
+8.1 Жадная стратегия: 
+            1. Выбрать наименьшие коробки, которые помещаются в грузовик.
+            2. Повторять пункт №1, пока грузовик не будет заполнен.
+    Решение не будет идеальным, но окажется близким к идеалу. 
+
+    Greedy strategy:
+            1. Select the smallest boxes that fit into the truck.
+            2. Repeat step 1 until the truck is full.
+    The solution will not be perfect, but close to ideal.
+8.2 Очевидным решением с помощью жадного алгоритма будет поехать к достопримечательности с наивысшим баллом, на которую хватает времени.
+    Решение не будет оптимальным с точки зрения рациональности, а вот по эмоциям может оказаться близким к идеалу.
+
+    An obvious solution using a greedy algorithm is to travel to the attraction with the highest score that can be visited within the available time.
+    The decision won't be optimal from a standpoint of rationality, but in terms of emotion, it might turn out to be close to ideal.
+8.3 Быстрая сортировка - нет
+    Quicksort - no
+8.4 Поиск в ширину - нет
+    Breadth-First Search(BFS) - no
+8.5 Алгоритм Дейкстры - нет
+    Dijkstra's algorithm - no
+8.6 Да/Yes
+8.7 Нет/No
+8.8 Нет/No
