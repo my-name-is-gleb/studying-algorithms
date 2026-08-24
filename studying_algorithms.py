@@ -326,3 +326,7 @@ print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_ma
 print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_marks}\n  Только велики {velo_marks-auto_marks}") # разность
 print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_marks}\n  Только машины {auto_marks-velo_marks}") # разность
 """--------------------------------------------------"""
+
+"""Chapter 09"""
+
+pass
