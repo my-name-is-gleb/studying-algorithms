@@ -330,3 +330,7 @@ print(f"Есть два множества:\n   1. {velo_marks}\n    2. {auto_ma
 """Chapter 09"""
 
 pass
+
+"""Chapter 10"""
+
+pass
