@@ -162,3 +162,33 @@
    ├───────┼───────┼───────┼───────┤
  s │   0   │   0   │   0   │   0   │
    └───────┴───────┴───────┴───────┘
+
+"""Chapter 10"""
+10.1 Конкретной стратегии или формулы у меня придумать не получилось. 
+     Но если смотреть на то, как ведут себя соцсети, сталкиваясь с этой проблемой, 
+     можно, исходя из тем, которым пользователь ставит хорошую оценку, предлагать контент на основе этих же тем.
+
+     А дальше — наблюдать, насколько активно пользователь потребляет этот контент, и выстраивать ему рекомендации, 
+     а также персональную шкалу предпочтений.
+     Когда вы показываете рекомендации по одной теме, можно спрашивать его о том, насколько ему нравится последний контент.
+     
+     Это сложный вопрос, так как наверняка понять, где ему просто понравилось, а где понравилось очень, невозможно, 
+     если он везде ставит одну и ту же хорошую оценку.
+     Также можно попытаться понять это, если смотреть на то, какой контент он перематывает и ускоряет, а за каким внимательно наблюдает. 
+     Кроме того, пользователю контент, вероятно, нравится, если он отправляет видео или пост в «Избранное».
+
+    /
+
+     I couldn't come up with a specific strategy or formula. 
+     But if you look at how social networks behave when faced with this problem, 
+     Based on the topics that the user gives a good rating to, you can offer content based on the same topics.
+     
+     And then — to observe how actively the user consumes this content, and build recommendations for him., 
+     as well as a personal preference scale.
+     When you show recommendations on a single topic, you can ask him how much he likes the latest content.
+     
+     This is a difficult question, as it’s impossible to know for sure where he simply liked something and where he liked it a lot, if he gives the same high rating everywhere.
+     You can also try to figure this out by looking at which content he rewinds and speeds up, and which he watches carefully. 
+     Furthermore, the user is likely to like the content if they save a video or post to their “Favorites.”
+10.2 Не знаю/don't know
+10.3 Слишком мало/Too little
